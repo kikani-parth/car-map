@@ -1,0 +1,9 @@
+.car-list {
+    list-style-type: none; /* Remove default list bullets */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .car-list-item {
+    margin-bottom: 20px; /* Add space between items */
+  }
+  
