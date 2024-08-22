@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CarList from '../components/CarList';
 import { Placemark } from '../types';
 import locationsData from '../assets/locations.json';
+import FilteredCarList from 'components/FilteredCarList';
 
 const CarPage: React.FC = () => {
   const [cars, setCars] = useState<Placemark[]>([]);
@@ -12,7 +13,7 @@ const CarPage: React.FC = () => {
 
   return (
     <div>
-      <CarList cars={cars} />
+      <FilteredCarList cars={cars} />
     </div>
   );
 };

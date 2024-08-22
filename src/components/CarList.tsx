@@ -9,7 +9,6 @@ interface CarListProps {
 const CarList: React.FC<CarListProps> = ({ cars }) => {
   return (
     <div>
-      <h1 style={{ textAlign: 'left', margin: '25px' }}>Car List</h1>
       <ul className="car-list">
         {cars
           ? cars.map((car) => (
