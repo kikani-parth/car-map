@@ -6,7 +6,10 @@ export const filterCars = (
   adddressFilter: string,
   coordinatesFilter: number[],
   engineTypeFilter: string,
-  fuelFilter: number
+  fuelFilter: number,
+  exteriorFilter: string,
+  interiorFilter: string,
+  vinFilter: string
 ): Placemark[] => {
   return cars.filter(
     (car) =>
@@ -18,6 +21,12 @@ export const filterCars = (
       // Engine Type filtering
       car.engineType.toLowerCase().includes(engineTypeFilter.toLowerCase()) &&
       // Fuel filtering
-      (fuelFilter ? car.fuel >= fuelFilter : true)
+      (fuelFilter ? car.fuel >= fuelFilter : true) &&
+      // Exterior filtering
+      car.exterior.toLowerCase().includes(exteriorFilter.toLowerCase()) &&
+      // Interior filtering
+      car.interior.toLowerCase().includes(interiorFilter.toLowerCase()) &&
+      // VIN filtering
+      car.vin.toLowerCase().includes(vinFilter.toLowerCase())
   );
 };

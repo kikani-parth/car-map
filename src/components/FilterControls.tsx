@@ -1,13 +1,18 @@
 import React from 'react';
+import { Placemark } from 'types';
 
 interface FilterControlsProps {
-  filters: {
-    name: string;
-    address: string;
-    coordinates: number[];
-    engineType: string;
-    fuel: number;
-  };
+  filters: Placemark;
+  //   filters: {
+  //     name: string;
+  //     address: string;
+  //     coordinates: number[];
+  //     engineType: string;
+  //     fuel: number;
+  //     exterior: string;
+  //     interior: string;
+  //     vin: string;
+  //   };
   onFilterChange: (filterType: string, value: string) => void;
 }
 
@@ -46,6 +51,30 @@ const FilterControls: React.FC<FilterControlsProps> = ({
         placeholder="Filter by fuel"
         value={filters.fuel}
         onChange={(e) => onFilterChange('fuel', e.target.value)}
+        style={{ marginBottom: '20px', display: 'block' }}
+      />
+
+      <input
+        type="text"
+        placeholder="Filter by exterior"
+        value={filters.exterior}
+        onChange={(e) => onFilterChange('exterior', e.target.value)}
+        style={{ marginBottom: '20px', display: 'block' }}
+      />
+
+      <input
+        type="text"
+        placeholder="Filter by interior"
+        value={filters.interior}
+        onChange={(e) => onFilterChange('interior', e.target.value)}
+        style={{ marginBottom: '20px', display: 'block' }}
+      />
+
+      <input
+        type="text"
+        placeholder="Filter by vin"
+        value={filters.vin}
+        onChange={(e) => onFilterChange('vin', e.target.value)}
         style={{ marginBottom: '20px', display: 'block' }}
       />
     </div>
