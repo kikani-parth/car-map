@@ -11,16 +11,33 @@ interface FilteredCarListProps {
 }
 
 const FilteredCarList: React.FC<FilteredCarListProps> = ({ cars }) => {
-  const [filter, setFilter] = useState<string>('');
+  const [filters, setFilters] = useState({
+    name: '',
+    address: '',
+    coordinates: [0],
+  });
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
-  const filteredCars = filterCars(cars, filter);
+  const handleFilterChange = (filterType: string, value: string) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [filterType]: value,
+    }));
+  };
+
+  const filteredCars = filterCars(
+    cars,
+    filters.name,
+    filters.address,
+    filters.coordinates
+  );
+
   const sortedCars = sortCars(filteredCars, sortOrder);
 
   return (
     <div>
       <h1 style={{ textAlign: 'left', margin: '25px' }}>Car List</h1>
-      <FilterControls filter={filter} onFilterChange={setFilter} />
+      <FilterControls filters={filters} onFilterChange={handleFilterChange} />
       <SortControls sortOrder={sortOrder} onSortChange={setSortOrder} />
       <CarList cars={sortedCars} />
     </div>

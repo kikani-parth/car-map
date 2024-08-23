@@ -2,9 +2,14 @@ import { Placemark } from 'types';
 
 export const filterCars = (
   cars: Placemark[],
-  filterText: string
+  nameFilter: string,
+  adddressFilter: string,
+  coordinatesFilter: number[]
 ): Placemark[] => {
-  return cars.filter((car) =>
-    car.name.toLowerCase().includes(filterText.toLowerCase())
+  return cars.filter(
+    (car) =>
+      car.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
+      car.address.toLowerCase().includes(adddressFilter.toLowerCase())
+    //   car.coordinates.toLowerCase().includes(coordinatesFilter.toLowerCase())
   );
 };

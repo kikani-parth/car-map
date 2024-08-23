@@ -1,12 +1,16 @@
 import React from 'react';
 
 interface FilterControlsProps {
-  filter: string;
-  onFilterChange: (value: string) => void;
+  filters: {
+    name: string;
+    address: string;
+    coordinates: number[];
+  };
+  onFilterChange: (filterType: string, value: string) => void;
 }
 
 const FilterControls: React.FC<FilterControlsProps> = ({
-  filter,
+  filters,
   onFilterChange,
 }) => {
   return (
@@ -14,8 +18,16 @@ const FilterControls: React.FC<FilterControlsProps> = ({
       <input
         type="text"
         placeholder="Filter by name"
-        value={filter}
-        onChange={(e) => onFilterChange(e.target.value)}
+        value={filters.name}
+        onChange={(e) => onFilterChange('name', e.target.value)}
+        style={{ marginBottom: '20px', display: 'block' }}
+      />
+
+      <input
+        type="text"
+        placeholder="Filter by address"
+        value={filters.address}
+        onChange={(e) => onFilterChange('address', e.target.value)}
         style={{ marginBottom: '20px', display: 'block' }}
       />
     </div>
