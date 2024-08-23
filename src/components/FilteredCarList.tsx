@@ -20,6 +20,7 @@ const FilteredCarList: React.FC<FilteredCarListProps> = ({ cars }) => {
     fuel: 0,
   });
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+  const [sortBy, setSortBy] = useState<'name' | 'fuel'>('name');
 
   const handleFilterChange = (filterType: string, value: string) => {
     setFilters((prevFilters) => ({
@@ -37,13 +38,18 @@ const FilteredCarList: React.FC<FilteredCarListProps> = ({ cars }) => {
     filters.fuel
   );
 
-  const sortedCars = sortCars(filteredCars, sortOrder);
+  const sortedCars = sortCars(filteredCars, sortOrder, sortBy);
 
   return (
     <div>
       <h1 style={{ textAlign: 'left', margin: '25px' }}>Car List</h1>
       <FilterControls filters={filters} onFilterChange={handleFilterChange} />
-      <SortControls sortOrder={sortOrder} onSortChange={setSortOrder} />
+      <SortControls
+        sortOrder={sortOrder}
+        sortBy={sortBy}
+        onSortChange={setSortOrder}
+        onSortByChange={setSortBy}
+      />
       <CarList cars={sortedCars} />
     </div>
   );
