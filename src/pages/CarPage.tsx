@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import CarList from '../components/CarList';
 import { Placemark } from '../types';
 import locationsData from '../assets/locations.json';
 import FilteredCarList from 'components/FilteredCarList';

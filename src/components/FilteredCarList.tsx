@@ -11,10 +11,13 @@ interface FilteredCarListProps {
 }
 
 const FilteredCarList: React.FC<FilteredCarListProps> = ({ cars }) => {
+  // TODO: add useState<Placemark>
   const [filters, setFilters] = useState({
     name: '',
     address: '',
     coordinates: [0],
+    engineType: '',
+    fuel: 0,
   });
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
@@ -29,7 +32,9 @@ const FilteredCarList: React.FC<FilteredCarListProps> = ({ cars }) => {
     cars,
     filters.name,
     filters.address,
-    filters.coordinates
+    filters.coordinates,
+    filters.engineType,
+    filters.fuel
   );
 
   const sortedCars = sortCars(filteredCars, sortOrder);
