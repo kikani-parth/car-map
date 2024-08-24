@@ -1,3 +1,5 @@
+// SortControls.tsx
+
 import React from 'react';
 
 interface SortControlsProps {
@@ -16,7 +18,7 @@ const SortControls: React.FC<SortControlsProps> = ({
   return (
     <div>
       <div>
-        <label>Sort by:</label>
+        <label>Sort by: </label>
         <select
           value={sortBy}
           onChange={(e) => onSortByChange(e.target.value as 'name' | 'fuel')}

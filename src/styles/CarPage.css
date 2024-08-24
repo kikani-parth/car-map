@@ -1,0 +1,15 @@
+.car-page-container {
+    display: flex;
+    flex-direction: row; /* Align items side by side */
+    gap: 20px; /* Add some space between the list and the map */
+    padding: 20px;
+  }
+  
+  .car-page-container > * {
+    flex: 1; /* Make both sections take up equal space */
+  }
+  
+  .car-page-container .map {
+    height: 100%; /* Ensure the map fills its container */
+  }
+  

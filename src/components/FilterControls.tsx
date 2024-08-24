@@ -1,3 +1,5 @@
+// FilterControls.tsx
+
 import React from 'react';
 import { Placemark } from 'types';
 
@@ -21,7 +23,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
   onFilterChange,
 }) => {
   return (
-    <div>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
       <input
         type="text"
         placeholder="Filter by name"

@@ -1,6 +1,8 @@
+// CarList.tsx
+
 import React from 'react';
 import { Placemark } from 'types';
-import 'styles/CarList.css'; // Import the CSS file
+import 'styles/CarList.css';
 
 interface CarListProps {
   cars: Placemark[];
