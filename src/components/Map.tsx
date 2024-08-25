@@ -1,7 +1,6 @@
 // Map.tsx
 
-import React, { useState, useEffect, useRef } from 'react';
-//import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { Placemark } from 'types';
 
@@ -18,10 +17,18 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({ cars, userLocation }) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
-  const [isMapLoaded, setIsMapLoaded] = useState<boolean>(false);
+  // const [isMapLoaded, setIsMapLoaded] = useState<boolean>(false);
 
   useEffect(() => {
-    if (mapContainerRef.current && !mapRef.current) {
+    // Initialize map
+    mapRef.current = new mapboxgl.Map({
+      container: mapContainerRef.current!,
+      style: 'mapbox://styles/mapbox/streets-v11', // Map style to use
+      center: [userLocation.longitude, userLocation.latitude], // Initial map center in [longitude, latitude]
+      zoom: 9, // Initial map zoom level
+    });
+
+    /*     if (mapContainerRef.current) {
       // Initialize map
       mapRef.current = new mapboxgl.Map({
         container: mapContainerRef.current!,
@@ -29,28 +36,39 @@ const Map: React.FC<MapProps> = ({ cars, userLocation }) => {
         center: [userLocation.longitude, userLocation.latitude], // Initial map center in [longitude, latitude]
         zoom: 9, // Initial map zoom level
       });
-
       // Set map loaded flag once map is fully loaded
       mapRef.current.on('load', () => {
         setIsMapLoaded(true);
-
         // Add user location marker
         new mapboxgl.Marker({ color: 'blue' })
           .setLngLat([userLocation.longitude, userLocation.latitude])
           .setPopup(new mapboxgl.Popup().setText('You are here'))
           .addTo(mapRef.current!);
       });
-    }
+    } */
+
+    // Add user location marker
+    new mapboxgl.Marker({ color: 'blue' })
+      .setLngLat([userLocation.longitude, userLocation.latitude])
+      .setPopup(new mapboxgl.Popup().setText('You are here'))
+      .addTo(mapRef.current!);
+
+    // Add car markers
+    cars.forEach((car) => {
+      new mapboxgl.Marker({ color: 'red' })
+        .setLngLat([car.coordinates[0], car.coordinates[1]])
+        .setPopup(new mapboxgl.Popup().setText(car.name))
+        .addTo(mapRef.current!);
+    });
 
     // Clean up on unmount
     return () => {
       if (mapRef.current) {
-        // Remove all markers and popups if necessary
         mapRef.current.remove();
         mapRef.current = null;
       }
     };
-  }, [userLocation.latitude, userLocation.longitude]);
+  }, [cars, userLocation]);
 
   return (
     <div>
