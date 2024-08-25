@@ -1,6 +1,7 @@
 // SortControls.tsx
 
 import React from 'react';
+import 'styles/SortControls.css';
 
 interface SortControlsProps {
   sortOrder: 'asc' | 'desc';
@@ -16,7 +17,7 @@ const SortControls: React.FC<SortControlsProps> = ({
   onSortByChange,
 }) => {
   return (
-    <div>
+    <div className="sort-controls">
       <div>
         <label>Sort by: </label>
         <select

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Placemark } from 'types';
+import 'styles/FilterControls.css';
 
 interface FilterControlsProps {
   filters: Placemark;
@@ -23,7 +24,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
   onFilterChange,
 }) => {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+    <div className="filter-controls">
       <input
         type="text"
         placeholder="Filter by name"

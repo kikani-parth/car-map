@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { Placemark } from 'types';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MAPBOX_TOKEN =
   'pk.eyJ1Ijoia2lrYW5pLXBhcnRoIiwiYSI6ImNtMDZpd2JmODBkOWIyanM0N2lodjQwdXgifQ.Sn-nXnBNeWhmKmWwh5rW-A';
@@ -88,7 +89,7 @@ const Map: React.FC<MapProps> = ({ cars, userLocation }) => {
       <div
         ref={mapContainerRef}
         className="map"
-        style={{ height: '550px' }} // Set the map size
+        style={{ height: '100vh' }} // Set the map size
       />
     </div>
   );
