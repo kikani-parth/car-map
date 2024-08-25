@@ -19,7 +19,10 @@ const CarList: React.FC<CarListProps> = ({ cars }) => {
                 <br />
                 <span>Address: {car.address}</span>
                 <br />
-                <span>Coordinates: {car.coordinates}</span>
+                <span>
+                  Coordinates:{' '}
+                  {`${car.coordinates[0]}, ${car.coordinates[1]}, ${car.coordinates[2]}`}
+                </span>
                 <br />
                 <span>Engine Type: {car.engineType}</span>
                 <br />

@@ -51,7 +51,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
       <input
         type="number"
         placeholder="Filter by fuel"
-        value={filters.fuel}
+        value={filters.fuel === 0 ? '' : filters.fuel}
         onChange={(e) => onFilterChange('fuel', e.target.value)}
         style={{ marginBottom: '20px', display: 'block' }}
       />
