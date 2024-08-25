@@ -1,6 +1,7 @@
 .car-list {
     list-style-type: none; /* Remove default list bullets */
     text-align: left; /* Align text to the left */
+    padding: 0;
   }
   
   .car-list-item {
