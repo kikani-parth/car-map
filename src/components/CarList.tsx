@@ -1,5 +1,3 @@
-// CarList.tsx
-
 import React from 'react';
 import { Placemark } from 'types';
 import 'styles/CarList.css';

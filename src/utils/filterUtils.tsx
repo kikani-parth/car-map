@@ -4,7 +4,7 @@ export const filterCars = (
   cars: Placemark[],
   nameFilter: string,
   adddressFilter: string,
-  coordinatesFilter: number[],
+  coordinatesFilter: number[], //
   engineTypeFilter: string,
   fuelFilter: number,
   exteriorFilter: string,
@@ -17,7 +17,6 @@ export const filterCars = (
       car.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
       // Address filtering
       car.address.toLowerCase().includes(adddressFilter.toLowerCase()) &&
-      //   car.coordinates.toLowerCase().includes(coordinatesFilter.toLowerCase())
       // Engine Type filtering
       car.engineType.toLowerCase().includes(engineTypeFilter.toLowerCase()) &&
       // Fuel filtering

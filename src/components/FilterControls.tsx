@@ -1,21 +1,9 @@
-// FilterControls.tsx
-
 import React from 'react';
 import { Placemark } from 'types';
 import 'styles/FilterControls.css';
 
 interface FilterControlsProps {
   filters: Placemark;
-  //   filters: {
-  //     name: string;
-  //     address: string;
-  //     coordinates: number[];
-  //     engineType: string;
-  //     fuel: number;
-  //     exterior: string;
-  //     interior: string;
-  //     vin: string;
-  //   };
   onFilterChange: (filterType: string, value: string) => void;
 }
 

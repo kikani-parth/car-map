@@ -1,5 +1,3 @@
-// Map.tsx
-
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { Placemark } from 'types';

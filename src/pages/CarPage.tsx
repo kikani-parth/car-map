@@ -1,5 +1,3 @@
-// CarPage.tsx
-
 import React, { useState, useEffect } from 'react';
 import { Placemark } from '../types';
 import locationsData from '../assets/locations.json';
