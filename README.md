@@ -4,7 +4,9 @@
 
 Displays all the cars' information in a list and has filtering and sorting functionalities.
 
-![Car List preview](./src/assets/car-list.png)
+<p align="center">
+  <img src="./src/assets/car-list.png" alt="Screenshot of the Application" width="400"/>
+</p>
 
 <p align="center">
   <b>Car list</b>
