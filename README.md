@@ -4,9 +4,37 @@
 
 Displays all the cars' information in a list and has filtering and sorting functionalities.
 
+![Car List preview](./src/assets/car-list.png)
+
+<p align="center">
+  <b>Car list</b>
+</p>
+
 ## Section 2:
 
 Displays all the cars in the map (plus the user's updated location). After tapping a car on the map, the other cars will disappear and the car name will be displayed on top of the map pin, tapping again on the car will hide the car name and show again the other cars' pins.
+
+![Car map preview (showing all car markers)](./src/assets/all-cars.png)
+
+<p align="center">
+  <b>Map showing all cars</b>
+</p>
+
+<br />
+
+![Car map preview (showing a selected car)](./src/assets/selected-car.png)
+
+<p align="center">
+  <b>Map showing a selected car</b>
+</p>
+
+<br />
+
+![Whole page preview (car list + car map(showing user's location))](./src/assets/car-map-app.png)
+
+<p align="center">
+  <b>Car map app showing car list + user's location</b>
+</p>
 
 # Getting Started with Create React App
 
