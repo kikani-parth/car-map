@@ -2,12 +2,11 @@
 
 ## Section 1:
 
-Displays all the cars' information in a list and can apply filter to sort them
+Displays all the cars' information in a list and has filtering and sorting functionalities.
 
 ## Section 2:
 
-Displays all the cars in the map (plus the user's updated location). After tapping a car on the map, the others will disappear and the car name will be
-displayed on top of the map pin, tapping again on the car will hide the car name and show again the other cars' pins. The UI is minimal but straightforward.
+Displays all the cars in the map (plus the user's updated location). After tapping a car on the map, the other cars will disappear and the car name will be displayed on top of the map pin, tapping again on the car will hide the car name and show again the other cars' pins.
 
 # Getting Started with Create React App
 
